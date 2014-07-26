@@ -5,6 +5,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" Runat="Server">
     <form runat="server" class="form-horizontal">
+        <div id="error" runat="server" class="alert alert-danger">
+            Incorrect email or password.
+        </div>
         <div class="col-lg-4">
             <h3>User Login</h3>
             <div class="form-group">
