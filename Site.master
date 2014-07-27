@@ -38,7 +38,7 @@
               </ul>
             </li>
             <li>
-              <a href="~/Random.aspx">Surprise Me <i class="fa fa-random"></i></a>
+              <a runat="server" href="~/Random.aspx">Surprise Me <i class="fa fa-random"></i></a>
             </li>
             <li>
                 <a href="AboutUs.aspx">About Us </a>
@@ -49,9 +49,9 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-            <a class="dropdown-toggle" href="#" data-toggle="dropdown">Login & Register </a>
-          </li>
+            <li>
+                <a runat="server" href="~/Login.aspx">Login & Register </a>
+            </li>
           </ul>
 
         </div>
