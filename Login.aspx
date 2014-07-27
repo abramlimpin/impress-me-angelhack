@@ -5,10 +5,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" Runat="Server">
     <form runat="server" class="form-horizontal">
-        <div id="error" runat="server" class="alert alert-danger">
-            Incorrect email or password.
-        </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
+            <div id="error" runat="server" class="alert alert-danger" visible="false">
+                Incorrect email or password.
+            </div>
             <h3>User Login</h3>
             <div class="form-group">
                 <label class="control-label col-lg-4">Email Address</label>
@@ -24,7 +24,12 @@
             </div>
             <div class="form-group">
                 <div class="col-lg-offset-4 col-lg-8">
-                    <asp:LinkButton ID="btnLogin" runat="server" class="btn btn-social btn-facebook">
+                    <asp:Button ID="btnLogin" runat="server" class="btn btn-info" Text="Login" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-4 col-lg-8">
+                    <asp:LinkButton ID="btnLoginFB" runat="server" class="btn btn-social btn-facebook">
                         <i class="fa fa-facebook"></i> Sign in with Facebook
                     </asp:LinkButton>
                 </div>
