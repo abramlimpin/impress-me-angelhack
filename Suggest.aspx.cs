@@ -17,6 +17,7 @@ public partial class Suggest : System.Web.UI.Page
         {
             GetSuggestions();
             GetRegions();
+            GetTypes();
             GetCities(ddlRegions.SelectedValue);
         }
     }
@@ -26,7 +27,7 @@ public partial class Suggest : System.Web.UI.Page
         con.Open();
         SqlCommand cmd = new SqlCommand();
         cmd.Connection = con;
-        cmd.CommandText = "SELECT Posts.PostName, Posts.Description, Posts.Budget, Images.Image " +
+        cmd.CommandText = "SELECT Posts.PostID, Posts.PostName, Posts.Description, Posts.Budget, Images.Image " +
             "FROM Posts INNER JOIN Images ON Posts.PostID = Images.PostID";
         SqlDataAdapter da = new SqlDataAdapter(cmd);
         DataSet ds = new DataSet();
@@ -63,6 +64,20 @@ public partial class Suggest : System.Web.UI.Page
         ddlCities.DataTextField = "Name";
         ddlCities.DataValueField = "CityID";
         ddlCities.DataBind();
+        con.Close();
+    }
+
+    void GetTypes()
+    {
+        con.Open();
+        SqlCommand cmd = new SqlCommand();
+        cmd.Connection = con;
+        cmd.CommandText = "SELECT CatID, Category FROM Categories";
+        SqlDataReader data = cmd.ExecuteReader();
+        ddlTypes.DataSource = data;
+        ddlTypes.DataTextField = "Category";
+        ddlTypes.DataValueField = "CatID";
+        ddlTypes.DataBind();
         con.Close();
     }
 

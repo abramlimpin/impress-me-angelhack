@@ -6,7 +6,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="main" Runat="Server">
     <form runat="server">
         <div class="col-lg-3">
-            <h3>Location</h3>
+            <h4>Location</h4>
             <div class="col-lg-12">
                 <div class="form-group">
                     <asp:DropDownList ID="ddlRegions" runat="server" class="form-control" AutoPostBack="true"
@@ -14,7 +14,13 @@
                     <asp:DropDownList ID="ddlCities" runat="server" class="form-control" />
                 </div>
             </div>
-            <h3>Budget</h3>
+            <h4>Type</h4>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <asp:DropDownList ID="ddlTypes" runat="server" class="form-control" />
+                </div>
+            </div>
+            <h4>Budget</h4>
             <div class="col-lg-12">
                 <div class="form-inline">
                     <div class="form-group">
@@ -29,8 +35,6 @@
                     </div>
                 </div>
             </div>
-            <hr />
-            <asp:Button ID="btnSearch" runat="server" class="btn btn-block" text="Search" />
         </div>
         <div class="col-lg-9">
             <div class="row">
@@ -40,8 +44,8 @@
                     </a>
                 </div>
                 <div class="col-md-5">
-                    <h3>Project One</h3>
-                    <h4>Subheading</h4>
+                    <h3>Featured Suggestion</h3>
+                    <h4>Store Name</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
                     <a class="btn btn-primary" href="#">View Project <span class="glyphicon glyphicon-chevron-right"></span></a>
                 </div>
@@ -52,7 +56,7 @@
                 <asp:ListView ID="lvSuggests" runat="server">
                     <ItemTemplate>
                         <div class="col-md-4 portfolio-item">
-                            <a href="#">
+                            <a href='Details.aspx?suggest=<%# Eval("PostID") %>'>
                                 <img class="img-responsive" src='<%# string.Concat("assets/posts/", Eval("Image")) %>' alt="">
                             </a>
                             &nbsp;<h3>
