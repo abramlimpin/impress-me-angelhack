@@ -24,6 +24,6 @@ public partial class Random : System.Web.UI.Page
         cmd.CommandText = "SELECT TOP 1 PostID FROM Posts ORDER BY NEWID()";
         int postID = (int)cmd.ExecuteScalar();
         con.Close();
-        Response.Redirect("Details.aspx?suggestion=" + postID.ToString());
+        Response.Redirect("Details.aspx?suggest=" + postID.ToString());
     }
 }
